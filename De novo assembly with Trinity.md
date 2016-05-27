@@ -1,4 +1,4 @@
-## _de novo_ transcriptome assembly with Trinity
+## _De novo_ transcriptome assembly with Trinity
 
 **Note: This tutorial has been updated and modified from the paper _De novo transcript sequence reconstruction from RNA-seq using the Trinity platform for reference generation and analysis_ doi:[10.1038/nprot.2013.084](dx.doi.org/10.1038/nprot.2013.084) for use on the Smithsonian HPC**
 
