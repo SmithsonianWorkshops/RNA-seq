@@ -58,3 +58,18 @@ Trinity --seqType fq  \
 Now save your text file into your ```/pool/genomics/<username>/RNAseq_workshop``` directory as ```trinity.job```.
 
 Now submit your job with the command: ```qsub trinity.job```
+
+####Check out the Trinity assembly
+
+You should have the assembly written to ```trinity_out_dir.Trinity.fasta```. Check out the first few lines of the assembly:
+```
+$ head trinity_out_dir.Trinity.fasta
+```
+
+You will see the first few transcripts. Note that g1 refers to gene 1 and i1 refers to isoform 1. There can be many isoforms per gene. This can become important in downstream applications such as orthology assessment or differential expression.
+
+Now check how many transcripts were assembled. An easy way to do this is to count the number of ```>``` in the fasta file. These each correspond to a transcript. You can do this with ```grep```.
+```
+$ grep -c '>' trinity_out_dir/Trinity.fasta
+``` 
+
