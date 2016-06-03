@@ -73,3 +73,5 @@ Now check how many transcripts were assembled. An easy way to do this is to coun
 $ grep -c '>' trinity_out_dir/Trinity.fasta
 ``` 
 
+Now we will generate stats about the transcripts. you can do this with the ```TrinityStats.pl``` script. This will be a very short job
+
