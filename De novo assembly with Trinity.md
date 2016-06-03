@@ -3,7 +3,7 @@
 **Note: This tutorial has been updated and modified from the Trinity tutorial given by Brian Haas [here](https://github.com/trinityrnaseq/KrumlovTrinityWorkshopJan2016/wiki/Home/e67c7a4ae4fe005866a56371ea29f15c79e8ccfb) for use on the Smithsonian HPC. We will also use data from [Defining the transcriptomic landscape of Candida glabrata by RNA-Seq](http://www.ncbi.nlm.nih.gov/pubmed/?term=25586221)**
 
 
-#### Copy the data to you directory
+#### Get the data
 
 I have downloaded the reads that we will be using for this workshop. They can be found in ```/pool/genomics/workshops/RNAseq```. Make a new subdirectory in your ```/pool/genomics``` directory and copy the reads there.
 
@@ -11,20 +11,19 @@ I have downloaded the reads that we will be using for this workshop. They can be
 $ cd /pool/genomics/<username>
 $ mkdir RNAseq_workshop
 $ cd RNAseq_workshop
-$ cp /pool/genomics/workshops/RNAseq/RNAseq_data.tar.gz .
+$ cp /pool/genomics/workshops/RNAseq/data.tar.gz .
 ```
 
-Now unpack/unzip the tar file and change into the RNAseq_data directory:
+Now unpack/unzip the tar file:
 
 ```
-$ tar -xvzf RNAseq_data.tar.gz
-$ cd RNAseq_data
+$ tar -xvzf data.tar.gz
 ```
 
 Go ahead and take a look at the data in your directory:
 
 ```
-ls -lh
+ls -lh data
 ```
 
 The paper from which these data are derived examined *C. glabrata* in two conditions, nutrient rich (wt) and under nitrosative stress (GNSO). Note that for each replicate, there are two files, ending in: 1.fastq and 2.fastq. This is because the reads are paired end.
@@ -33,7 +32,11 @@ In this tutorial we are assuming that there is no good reference genome. Because
 
 However, before we start the Trinity run, we will do some quality assessment with FASTQC.
 
+####Read quality assessment with FASTQC
+
 <FASTQC>
+
+####Trinity _de novo_ assembly
 
 Now we will start the Trinity run.
 
