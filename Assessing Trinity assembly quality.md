@@ -82,4 +82,43 @@ As you can see here, only 36.7% of the reads aligned properly to the assembled t
 
 ####Assess number of full-length coding transcripts
 
-We can also evaluate transcriptome assemblies based on the number of fully assembled coding transcripts. One way to do this is to BLAST the transcripts against a database of protein sequences. We will use a reduced version of SWISSPROT for this.
+We can also evaluate transcriptome assemblies based on the number of fully assembled coding transcripts. One way to do this is to BLAST the transcripts against a database of protein sequences. We will use a reduced version of SWISSPROT, which is in the ```data``` directory.
+
+Create a job file for this step. You should choose 8 CPUs and the default memory. You will want to load the blast module.
+
+In the command field enter:
+
+```
+blastx -query trinity_out_dir.Trinity.fasta \
+         -db data/mini_sprot.pep -out blastx.outfmt6 \
+         -evalue 1e-20 -num_threads $NSLOTS -max_target_seqs 1 -outfmt 6
+```
+
+Copy this to a job file called ```trinity_blastx.job``` and submit it.
+
+Your job will create an output file called ```blastx.outfmt6```. We will use the ```analyze_blastPlus_topHit_coverage.pl``` script to generate a table that contains information for the number of transcripts that contain full length protein sequence.
+
+Since this will be very fast, we can just enter it into the command line:
+
+```
+$ module load bioinformatics/trinity
+$ analyze_blastPlus_topHit_coverage.pl blastx.outfmt6 trinity_out_dir.Trinity.fasta data/mini_sprot.pep | column -t
+```
+
+The output will look something like this:
+
+```
+#hit_pct_cov_bin  count_in_bin  >bin_below
+100               79            79
+90                17            96
+80                11            107
+70                18            125
+60                16            141
+50                22            163
+40                36            199
+30                42            241
+20                64            305
+10                24            329
+```
+
+This tells us that 79 transcripts had were between 90 and 100% length, 17 were between 80 and 90%, etc. The far right column is a cumulative number, e.g. 125 transcripts contain >70% of the protein sequence length.
