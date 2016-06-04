@@ -34,7 +34,30 @@ However, before we start the Trinity run, we will do some quality assessment wit
 
 ####Read quality assessment with FASTQC
 
-<FASTQC>
+FastQC is a program that can quickly scan your raw data to help figure out if there are adapters or low quality reads present. Create a job file to run FastQC on one of the three files you downloaded.
+
+* Create a job file to run FASTQC on the data you just copied to your working directory:  
+	+ hint: use the QSub Generator: ```https://hydra-3.si.edu/tools/QSubGen```
+    + *Remember Chrome works best with this and to accept the security warning message*  
+    + **CPU time:** short *(we will be using short for all job files in this tutorial)*
+    + **memory:** 2GB
+    + **PE:** serial
+    + **module:** ```bioinformatics/fastqc/0.11.5```
+    + **command:** ```fastqc <FILE.fastq>```  
+    + **job name:** FASTQC *(or name of your choice)*  
+    + **log file name:** FASTQC.log  
+    + hint: either use ```nano``` or upload your job file using ```scp``` from your local machine into the `assembly_tutorial` directory. See [here](https://confluence.si.edu/display/HPC/Disk+Space+and+Disk+Usage) and [here](https://confluence.si.edu/display/HPC/Transferring+files+to+or+from+Hydra) on the Hydra wiki for more info.  
+    + hint: submit the job on Hydra using ```qsub``` 
+	+ after your job finishes, find the results and download some of the images, e.g. ```per_base_quality.png``` to your local machine using ```scp```
+
+####Trimming adapters with TrimGalore 
+TrimGalore will auto-detect what adapters are present and remove very low quality reads (quality score <20) by default.  
+
+* Create a job file to run TrimGalore on your data:  
+	+ **command**: ```trim_galore --paired --retain_unpaired <FILE_1.fastq> <FILE_2.fastq>```  
+	+ **module**: ```bioinformatics/trimgalore/0.4.0```
+	+ You can then run FastQC again to see if anything has changed.
+
 
 ####Trinity _de novo_ assembly
 
