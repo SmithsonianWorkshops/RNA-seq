@@ -35,8 +35,8 @@ However, before we start the Trinity run, we will do some quality assessment wit
 FastQC is a program that can quickly scan your raw data to help figure out if there are adapters or low quality reads present. Create a job file to run FastQC on one of the three files you downloaded.
 
 * Create a job file to run FASTQC on the data you just copied to your working directory:  
-	+ hint: use the QSub Generator: ```https://hydra-3.si.edu/tools/QSubGen```
-    + *Remember Chrome works best with this and to accept the security warning message*  
+	+ Use the QSub Generator: ```https://hydra-3.si.edu/tools/QSubGen```
+    + *Remember Chrome works best, but you'll need to accept the security warning message*  
     + **CPU time:** short *(we will be using short for all job files in this tutorial)*
     + **memory:** 2GB
     + **PE:** serial
@@ -50,6 +50,8 @@ FastQC is a program that can quickly scan your raw data to help figure out if th
 
 ####Trimming adapters with TrimGalore 
 TrimGalore will auto-detect what adapters are present and remove very low quality reads (quality score <20) by default.  
+
+_Note: We will not be doing this step for this particular workshop because the data has already been trimmed. However, remember that trimming adapters should always be done prior to genome assembly!_
 
 * Create a job file to run TrimGalore on your data:  
 	+ **command**: ```trim_galore --paired --retain_unpaired <FILE_1.fastq> <FILE_2.fastq>```  
