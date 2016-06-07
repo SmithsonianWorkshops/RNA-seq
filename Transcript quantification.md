@@ -135,7 +135,7 @@ Now we will generate the matrices for genes. Create another job file, but this t
 
 ```
 abundance_estimates_to_matrix.pl --est_method RSEM \
-      --out_prefix Trinity_trans \
+      --out_prefix Trinity_genes \
       GSNO_SRR1582648.RSEM/GSNO_SRR1582648.genes.results \
       GSNO_SRR1582646.RSEM/GSNO_SRR1582646.genes.results \
       GSNO_SRR1582647.RSEM/GSNO_SRR1582647.genes.results \
