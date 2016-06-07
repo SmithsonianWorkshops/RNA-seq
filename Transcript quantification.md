@@ -143,7 +143,7 @@ abundance_estimates_to_matrix.pl --est_method RSEM \
       wt_SRR1582651.RSEM/wt_SRR1582651.genes.results \
       wt_SRR1582650.RSEM/wt_SRR1582650.genes.results
 ```
-Now that we expression values we can estimate some new statistics. We will use the expression quantification values to calculate the ExN50, which is restricted only the most highly expressed transcripts. This is more informative of the quality of the assembly since it only uses the transcripts that have suitable coverage.
+Now that we have expression values we can estimate some new statistics. We will use the expression quantification values to calculate the ExN50, which is restricted to only the most highly expressed transcripts. This is more informative of the quality of the assembly since it only uses the transcripts that have suitable coverage.
 
 The file that you generate from QSubGen should choose the short queue and the default RAM. Load the ```bioinformatics/trinity/2.1.1``` module. The command that you should use is:
 ```
