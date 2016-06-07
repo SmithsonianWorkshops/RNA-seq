@@ -11,7 +11,7 @@ You will see the first few transcripts. Note that g1 refers to gene 1 and i1 ref
 
 Now check how many transcripts were assembled. An easy way to do this is to count the number of ```>``` in the fasta file. These each correspond to a transcript. You can do this with ```grep```.
 ```
-$ grep -c '>' trinity_out_dir/Trinity.fasta
+$ grep -c '>' trinity_out_dir.Trinity.fasta
 ``` 
 ####Contig stats
 
