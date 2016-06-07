@@ -166,6 +166,18 @@ Now examine the heatmap
 
 You can use the heatmap to compare the two conditions. The left columns with the turquoise line on top are those under wt and the right columns under the red line are under GSNO. Upregulated expression is in yellow and downregulated expression is in purple. This is a nice visual way to compare expression across conditions.
 
+####View transcript clusters
+
+You can also cut the dendrogram to view transcript clusters that share similar expression profiles. To do this, run the following command into a job file. Be sure to load the ```bioinformatics/trinity/2.1.1``` module and choose a serial job with 1GB of RAM:
+
+```
+define_clusters_by_cutting_tree.pl --Ptree 60 -R diffExpr.P1e-3_C2.matrix.RData
+```
+
+You should have a new output that looks like the following graph, which shows transcripts with similar expression profiles:
+
+![My cluster plots](my_cluster_plots.pdf)
+
 ####Now run on genes
 
 Now we will run differential expression analysis on the gene level. This will be very similar to the isoform analysis, but we will use the follow command:
