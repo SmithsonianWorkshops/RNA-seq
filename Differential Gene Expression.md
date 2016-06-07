@@ -160,3 +160,8 @@ Download that file and examine it on your computer.
 
 _Hint: you can use ```scp``` as above. Or you can use a GUI interface like Filezilla/Cyberduck._
 
+Now examine the heatmap
+
+![alt-text](diffExpr.P1e-3_C2.matrix.log2.centered.genes_vs_samples_heatmap.pdf)
+
+You can use the heatmap to compare the two conditions. The left columns with the turquoise line on top are those under wt and the right columns under the red line are under GSNO. Upregulated expression is in yellow and downregulated expression is in purple. This is a nice visual way to compare expression across conditions.
