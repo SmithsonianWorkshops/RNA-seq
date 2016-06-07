@@ -123,7 +123,7 @@ $ scp <username>@hydra-login01.si.edu:/pool/genomics/<username>/RNAseq_workshop/
 
 Go ahead and open it to examine its contents.
 
-![alt-text](Trinity_trans.counts.matrix.GSNO_vs_WT.edgeR.DE_results.MA_n_Volcano.pdf)
+![Volcano Plot](Trinity_trans.counts.matrix.GSNO_vs_WT.edgeR.DE_results.MA_n_Volcano.pdf)
 
 The points that are in red are determined to be significant with an ```FDR``` <= 0.05. To read more about these tests, you can follow the citations on the [edgeR bioconductor page](https://bioconductor.org/packages/release/bioc/html/edgeR.html).
 
@@ -162,6 +162,6 @@ _Hint: you can use ```scp``` as above. Or you can use a GUI interface like Filez
 
 Now examine the heatmap
 
-![alt-text](diffExpr.P1e-3_C2.matrix.log2.centered.genes_vs_samples_heatmap.pdf)
+![Differential Expression Heatmap](diffExpr.P1e-3_C2.matrix.log2.centered.genes_vs_samples_heatmap.pdf)
 
 You can use the heatmap to compare the two conditions. The left columns with the turquoise line on top are those under wt and the right columns under the red line are under GSNO. Upregulated expression is in yellow and downregulated expression is in purple. This is a nice visual way to compare expression across conditions.
