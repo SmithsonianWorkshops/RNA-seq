@@ -165,3 +165,17 @@ Now examine the heatmap
 ![Differential Expression Heatmap](diffExpr.P1e-3_C2.matrix.log2.centered.genes_vs_samples_heatmap.pdf)
 
 You can use the heatmap to compare the two conditions. The left columns with the turquoise line on top are those under wt and the right columns under the red line are under GSNO. Upregulated expression is in yellow and downregulated expression is in purple. This is a nice visual way to compare expression across conditions.
+
+####Now run on genes
+
+Now we will run differential expression analysis on the gene level. This will be very similar to the isoform analysis, but we will use the follow command:
+
+```
+run_DE_analysis.pl \
+      --matrix Trinity_genes.counts.matrix \
+      --samples_file samples.txt \
+      --method edgeR \
+      --output edgeR_gene
+```
+
+You can also run the other downstream analyses, but you should replace ```Trinity_trans``` with ```Trinity_genes``` in the commands.
