@@ -33,6 +33,8 @@ TrinityStats.pl trinity_out_dir.Trinity.fasta
 - Submit the job with ```qsub trinity_stats.job```
 - When the job is complete, view the log file. You will see scores like contig N50, etc.
 
+The N50 stats may not be the most useful for transcriptome analyses. They are dependent on both the length of the transcripts and can be influenced by the amount of expression of those particular genes. After we do transcript counting, we will generate ExN50 stats, which can be more informative. Aside from quick statistics like N50, we can generate more useful information about the quality of the transcriptome. We will try two of these methods next.
+
 ####Generate "more useful" stats
 
 ####Representation of reads
